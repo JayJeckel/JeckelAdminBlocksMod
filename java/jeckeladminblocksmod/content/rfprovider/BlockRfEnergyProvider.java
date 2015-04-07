@@ -1,4 +1,4 @@
-package jeckeladminblocksmod.content.euprovider;
+package jeckeladminblocksmod.content.rfprovider;
 
 import jeckeladminblocksmod.core.Refs;
 import jeckelcorelibrary.base.blocks.ABlockTile;
@@ -8,15 +8,15 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
-public class BlockEuProvider extends ABlockTile
+public class BlockRfEnergyProvider extends ABlockTile
 {
-	public BlockEuProvider()
+	public BlockRfEnergyProvider()
 	{
-		super(Refs.ModId, "admin_eu_provider", Material.iron, Block.soundTypeMetal);
+		super(Refs.ModId, "admin_rf_energy_provider", Material.iron, Block.soundTypeMetal);
 		this.isBlockContainer = true;
 	}
 
-	@Override public TileEntity createNewTileEntity(World world, int meta) { return new TileEuProvider(); }
+	@Override public TileEntity createNewTileEntity(World world, int meta) { return new TileRedstoneFluxProvider(); }
 
 	@Override public int damageDropped(int meta) { return 0; }
 

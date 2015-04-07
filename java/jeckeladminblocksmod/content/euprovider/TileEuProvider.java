@@ -3,13 +3,12 @@ package jeckeladminblocksmod.content.euprovider;
 import ic2.api.energy.event.EnergyTileLoadEvent;
 import ic2.api.energy.event.EnergyTileUnloadEvent;
 import ic2.api.energy.tile.IEnergySource;
-import jeckeladminblocksmod.JeckelAdminBlocksMod;
 import jeckeladminblocksmod.content.ContentManager;
+import jeckeladminblocksmod.core.Refs;
 import jeckelcorelibrary.api.guis.ITileGuiActivator;
 import jeckelcorelibrary.api.tiles.ITileInteractable;
 import jeckelcorelibrary.base.tiles.ATileInventory;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
@@ -22,7 +21,7 @@ implements ITileInteractable, ITileGuiActivator, IEnergySource
 	public TileEuProvider()
 	{
 		super(1);
-		this.setTileName(ContentManager.ModBlocks.redstone_flux_provider.getUnlocalizedName() + ".name");
+		this.setTileName(ContentManager.ModBlocks.rf_provider.getUnlocalizedName() + ".name");
 	}
 
 	@Override public void onChunkUnload()
@@ -57,23 +56,6 @@ implements ITileInteractable, ITileGuiActivator, IEnergySource
 
 	// ##################################################
 	//
-	// Read and Write NBT
-	//
-	// ##################################################
-
-	@Override public void readFromNBT(NBTTagCompound tagCompound)
-	{
-		super.readFromNBT(tagCompound);
-	}
-
-	@Override public void writeToNBT(NBTTagCompound tagCompound)
-	{
-		super.writeToNBT(tagCompound);
-	}
-
-
-	// ##################################################
-	//
 	// ITileInteractable
 	//
 	// ##################################################
@@ -81,7 +63,7 @@ implements ITileInteractable, ITileGuiActivator, IEnergySource
 	@Override public void interact(EntityPlayer player, World world, int x, int y, int z, int side)
 	{
 		if (player.isSneaking()) { return; }
-		player.openGui(JeckelAdminBlocksMod.INSTANCE, 0, world, x, y, z);
+		player.openGui(Refs.getMod(), 0, world, x, y, z);
 	}
 
 

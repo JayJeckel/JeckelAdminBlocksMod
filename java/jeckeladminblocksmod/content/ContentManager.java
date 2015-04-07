@@ -1,11 +1,11 @@
 package jeckeladminblocksmod.content;
 
-import jeckeladminblocksmod.content.euprovider.BlockEuProvider;
+import jeckeladminblocksmod.content.euprovider.BlockEuEnergyProvider;
 import jeckeladminblocksmod.content.euprovider.TileEuProvider;
 import jeckeladminblocksmod.content.fluidprovider.BlockFluidProvider;
 import jeckeladminblocksmod.content.fluidprovider.TileFluidProvider;
-import jeckeladminblocksmod.content.redstonefluxprovider.BlockRedstoneFluxProvider;
-import jeckeladminblocksmod.content.redstonefluxprovider.TileRedstoneFluxProvider;
+import jeckeladminblocksmod.content.rfprovider.BlockRfEnergyProvider;
+import jeckeladminblocksmod.content.rfprovider.TileRedstoneFluxProvider;
 import jeckeladminblocksmod.core.Refs;
 import jeckelcorelibrary.GlobalRefs;
 import jeckelcorelibrary.api.managers.IContentManager;
@@ -18,7 +18,7 @@ public class ContentManager implements IContentManager
 	{
 		public static Block fluid_provider;
 
-		public static Block redstone_flux_provider;
+		public static Block rf_provider;
 
 		public static Block eu_provider;
 	}
@@ -31,22 +31,16 @@ public class ContentManager implements IContentManager
 	@Override public void pre()
 	{
 		ModBlocks.fluid_provider = new BlockFluidProvider();
-		{
-			GameRegUtil.block(ModBlocks.fluid_provider, null, TileFluidProvider.class);
-			GlobalRefs.getTabManager().addMachineBlock(Refs.ModId, ModBlocks.fluid_provider);
-		}
+		GameRegUtil.block(ModBlocks.fluid_provider, null, TileFluidProvider.class);
+		GlobalRefs.getTabManager().addMachineBlock(Refs.ModId, ModBlocks.fluid_provider);
 
-		ModBlocks.redstone_flux_provider = new BlockRedstoneFluxProvider();
-		{
-			GameRegUtil.block(ModBlocks.redstone_flux_provider, null, TileRedstoneFluxProvider.class);
-			GlobalRefs.getTabManager().addMachineBlock(Refs.ModId, ModBlocks.redstone_flux_provider);
-		}
+		ModBlocks.rf_provider = new BlockRfEnergyProvider();
+		GameRegUtil.block(ModBlocks.rf_provider, null, TileRedstoneFluxProvider.class);
+		GlobalRefs.getTabManager().addMachineBlock(Refs.ModId, ModBlocks.rf_provider);
 
-		ModBlocks.eu_provider = new BlockEuProvider();
-		{
-			GameRegUtil.block(ModBlocks.eu_provider, null, TileEuProvider.class);
-			GlobalRefs.getTabManager().addMachineBlock(Refs.ModId, ModBlocks.eu_provider);
-		}
+		ModBlocks.eu_provider = new BlockEuEnergyProvider();
+		GameRegUtil.block(ModBlocks.eu_provider, null, TileEuProvider.class);
+		GlobalRefs.getTabManager().addMachineBlock(Refs.ModId, ModBlocks.eu_provider);
 	}
 
 	@Override public void initialize()

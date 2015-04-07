@@ -3,9 +3,9 @@ package jeckeladminblocksmod.content.fluidprovider;
 import java.util.ArrayList;
 import java.util.List;
 
-import jeckeladminblocksmod.JeckelAdminBlocksMod;
 import jeckeladminblocksmod.content.ContentManager;
 import jeckeladminblocksmod.core.InfiniteFluidTank;
+import jeckeladminblocksmod.core.Refs;
 import jeckelcorelibrary.api.guis.ITileGuiActivator;
 import jeckelcorelibrary.api.processes.ITickProcess;
 import jeckelcorelibrary.api.tiles.ITileInteractable;
@@ -110,7 +110,7 @@ implements ITileInteractable, ITileGuiActivator, IFluidHandler, ITileProcessor, 
 	@Override public void interact(EntityPlayer player, World world, int x, int y, int z, int side)
 	{
 		if (player.isSneaking()) { return; }
-		player.openGui(JeckelAdminBlocksMod.INSTANCE, 0, world, x, y, z);
+		player.openGui(Refs.getMod(), 0, world, x, y, z);
 	}
 
 

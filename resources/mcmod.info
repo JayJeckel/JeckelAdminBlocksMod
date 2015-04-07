@@ -5,7 +5,7 @@
 		{
 			"modid": "jeckeladminblocksmod",
 			"name": "JeckelAdminBlocksMod",
-			"description": "JeckelAdminBlocksMod implements non-craftable blocks that provide a practically infinite amount of fluid or energy. EU and RF energy types are both supported. Requires: JeckelCoreLibrary 0.5.1-beta",
+			"description": "JeckelAdminBlocksMod implements non-craftable blocks that provide a practically infinite amount of fluid or energy. EU and RF energy types are both supported. Requires: JeckelCoreLibrary 0.6.0-beta",
 			"version": "${version}",
 			"mcversion": "${mcversion}",
 			"forgeversion": "${forgeversion}",

@@ -6,7 +6,6 @@ import java.awt.Rectangle;
 import jeckeladminblocksmod.core.Refs;
 import jeckelcorelibrary.base.guis.AScreenTileInventory;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.StatCollector;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -19,10 +18,6 @@ public class ScreenFluidProvider extends AScreenTileInventory<TileFluidProvider>
 		super(player, tile, new ContainerFluidProvider(player, tile), tile, 176, 180);
 		this.setResourceLocation(Refs.ModId, "admin_fluid_provider.png");
 	}
-
-	public ResourceLocation getResourceLocation() { return this._resource; }
-	protected void setResourceLocation(final String modId, final String subPath) { this._resource = new ResourceLocation(modId, "textures/guis/" + subPath);; }
-	private ResourceLocation _resource;
 
 	private Rectangle rectTank = new Rectangle(77, 38, 22, 23);
 

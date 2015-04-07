@@ -1,4 +1,4 @@
-package jeckeladminblocksmod.content.redstonefluxprovider;
+package jeckeladminblocksmod.content.euprovider;
 
 import jeckeladminblocksmod.core.Refs;
 import jeckelcorelibrary.base.blocks.ABlockTile;
@@ -8,15 +8,15 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
-public class BlockRedstoneFluxProvider extends ABlockTile
+public class BlockEuEnergyProvider extends ABlockTile
 {
-	public BlockRedstoneFluxProvider()
+	public BlockEuEnergyProvider()
 	{
-		super(Refs.ModId, "admin_redstone_flux_provider", Material.iron, Block.soundTypeMetal);
+		super(Refs.ModId, "admin_eu_energy_provider", Material.iron, Block.soundTypeMetal);
 		this.isBlockContainer = true;
 	}
 
-	@Override public TileEntity createNewTileEntity(World world, int meta) { return new TileRedstoneFluxProvider(); }
+	@Override public TileEntity createNewTileEntity(World world, int meta) { return new TileEuProvider(); }
 
 	@Override public int damageDropped(int meta) { return 0; }
 
